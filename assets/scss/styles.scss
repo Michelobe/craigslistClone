@@ -1,87 +1,63 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import "reset";
 
-
-
-body {
-  line-height: 1;
-  background: white;
+*{
+    box-sizing: border-box;
 }
 
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:after,
-blockquote:before,
-q:after,
-q:before {
-  content: '';
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-}
-
-h1 {
-  font-weight: 100;
-  font-size: 50px;
-}
-
-.home {
-  height: 100%;
-  width: 100%;
-  text-align: center;
-  .Aligner {
-    min-height: 100vh;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-  }
-  img {
-    width: 100%;
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  .Aligner-item {
-    max-width: 50%;
-  }
-  .menu ul li {
-    padding: 10px 15px;
-    display: inline-block;
+html, body {
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-  }
-  .version-num {
-    background: #E8E8E8;
-    border-radius: 4px;
-    padding: 7px 15px;
-    display: inline-block;
-    font-size: 12px;
-    margin: 10px 0 20px;
-  }
-  a {
-    text-decoration: none;
-    color: #30395C;
-    transition: all 0.3s ease-in-out;
-  }
-  a:hover {
-    color: #43D4D6;
-  }
+    background: yellow;
+    background: linear-gradient(135deg, rgba(91,52,247,.7) 0%, rgba(230,39,230,.7) 100%), url('https://upload.wikimedia.org/wikipedia/commons/c/c1/Portland%2C_Oregon_skyline_from_the_Ross_Island_Bridge.jpg') center top no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+header{
+    padding: 20px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: white;
+    .fas{
+        margin-left: 10px;
+    }
+    .leftMenu{
+        display: flex;
+        .logo{
+            font-size: 2rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .city{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+        }
+    }
+    .rightMenu{
+        display: flex;
+        .userImg{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .userDropdown{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        .postBtn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 15px 20px;
+            background: #3890F6;
+            color: white;
+            font-weight: 300;
+        }
+    }
 }
