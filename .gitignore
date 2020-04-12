@@ -15,3 +15,5 @@ node_modules/
 #public/js/dist/SApp.js
 #public/js/dist/vendors~FirstComp.js
 #public/js/dist/vendors~SApp.js
+
+public/js/dist/vendors~renosplaza.js
