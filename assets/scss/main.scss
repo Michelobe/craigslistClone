@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700");
 @import "reset";
+@import "home";
 
 *{
     box-sizing: border-box;
@@ -8,7 +9,7 @@
 html, body {
     font-family: 'Roboto', sans-serif;
     background: yellow;
-    background: linear-gradient(135deg, rgba(91,52,247,.7) 0%, rgba(230,39,230,.7) 100%), url('https://upload.wikimedia.org/wikipedia/commons/c/c1/Portland%2C_Oregon_skyline_from_the_Ross_Island_Bridge.jpg') center top no-repeat;
+    background: linear-gradient(135deg, rgba(191, 128, 11, .7) 0%,rgba(37, 217, 184, .7) 100%), url('https://upload.wikimedia.org/wikipedia/commons/c/c1/Portland%2C_Oregon_skyline_from_the_Ross_Island_Bridge.jpg') center top no-repeat;
     background-size: cover;
     min-height: 100vh;
 }
@@ -55,9 +56,15 @@ header{
             justify-content: center;
             align-items: center;
             padding: 15px 20px;
-            background: #3890F6;
+            background: #F2BB16;
             color: white;
             font-weight: 300;
+            border-radius: 50px;
         }
     }
+}
+
+.container{
+    max-width: 1300px;
+    margin: 0 auto;
 }
