@@ -7,4 +7,11 @@ assets/views/
 # ignore components, not using them right now
 assets/components/
 # ignore javscript files 
-assets/js/components/FirstComp.jsassets/js/components/svelte/App.svelteassets/js/components/svelte/Header.svelteassets/js/components/svelte/SvelteApp.jspublic/js/dist/FirstComp.jspublic/js/dist/SApp.jspublic/js/dist/vendors~FirstComp.jspublic/js/dist/vendors~SApp.js
+assets/js/components/FirstComp.js
+assets/js/components/svelte/App.svelte
+assets/js/components/svelte/Header.svelte
+assets/js/components/svelte/SvelteApp.js
+public/js/dist/FirstComp.js
+public/js/dist/SApp.js
+public/js/dist/vendors~FirstComp.js
+public/js/dist/vendors~SApp.js
