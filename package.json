@@ -2,7 +2,7 @@
   "name": "codingphase-dev-kit",
   "version": "4.0.2",
   "description": "",
-  "main": "renosplaza.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "build": "gulp build",
