@@ -1,1 +1,10 @@
+# ignore node modules
 node_modules/
+# ignore svelte, second and views folders
+public/svelte/
+public/second/
+assets/views/
+# ignore components, not using them right now
+assets/components/
+# ignore javscript files 
+assets/js/components/FirstComp.jsassets/js/components/svelte/App.svelteassets/js/components/svelte/Header.svelteassets/js/components/svelte/SvelteApp.jspublic/js/dist/FirstComp.jspublic/js/dist/SApp.jspublic/js/dist/vendors~FirstComp.jspublic/js/dist/vendors~SApp.js
