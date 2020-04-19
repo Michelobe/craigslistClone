@@ -1,4 +1,17 @@
 .home{
+    h1{
+        font-size: 4rem;
+        text-align: center;
+        text-transform: capitalize;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 80px 0;
+        line-height: 1.2;
+        span{
+            font-weight: 300;
+        }
+    }
     .links{
         background: rgba(1, 31, 38, .7);
         display: grid;
@@ -51,6 +64,31 @@
             padding: 10px;
             &::placeholder{
                 color: rgba(0,0,0,.5);
+            }
+        }
+        .title{
+            font-size: 1rem;
+            color: white;
+            text-align: center;
+            padding: 20px 0 10px 0;
+            text-transform: uppercase;
+            font-weight: 400;
+        }
+        .trendingTags{
+            text-align: center;
+            .tag{
+                padding: 10px 20px;
+                margin: 5px;
+                border-radius: 50px;
+                border: 1px solid white;
+                display: inline-block;
+                color: white;
+                &:hover{
+                    background: white;
+                    color: #F2BB16;
+                    border: 1px solid #F2BB16;
+                    cursor: pointer;
+                }
             }
         }
     }

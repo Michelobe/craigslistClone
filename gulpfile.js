@@ -74,10 +74,10 @@ gulp.task(
 		// THIS IS FOR SITUATIONS WHEN YOU HAVE ANOTHER SERVER RUNNING
 		browserSync.init({
 			proxy: {
-				target: 'http://localhost:3333/', // can be [virtual host, sub-directory, localhost with port]
+				target: 'http://localhost:5000/', // can be [virtual host, sub-directory, localhost with port]
 				ws: true // enables websockets
-			}
-			// serveStatic: ['.', './public']
+			},
+			serveStatic: ['.', './public']
 		});
 	})
 );

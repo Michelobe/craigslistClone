@@ -73,7 +73,8 @@ export default class Home extends Component {
 			<div className={'home'}>
 				<div className="container">
 					<h1>
-						Connecting People <br /> Everywhere :-)
+						Connecting People <br /> Everywhere{' '}
+						<span className="happyFace">:-)</span>
 					</h1>
 
 					<section className={'links'}>{this.loopCategories()}</section>

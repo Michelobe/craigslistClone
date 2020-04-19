@@ -1,0 +1,16 @@
+.listingsPage{
+    background: white;
+    #filter{
+        .formGroup{
+            label{
+                font-weight: 700;
+            }
+            select{
+                background: white;
+                border-radius: 5px;
+                padding: 10px;
+                color: gray;
+            }
+        }
+    }
+}
