@@ -1,0 +1,85 @@
+.detailsPage{
+    background: #f1f1f1;
+    padding: 20px 0;
+    .whiteBox{
+        background: white;
+        .subMenu{
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            a{
+                padding: 10px 20px;
+                color: #2A7DDD;
+                cursor: pointer;
+                border-right: 1px solid #80808041;
+                text-decoration: none;
+                &:last-child{
+                    border: none;
+                }
+            }
+            .direction{
+                display: flex;
+                flex-flow: row;
+            }
+            .subLinks{
+                display: flex;
+                flex-flow: row;
+                & > a{
+                    &:nth-last-child(2){
+                        border: none;
+                    }
+                }
+            }
+        }
+        .contentArea{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+            .mediaColumn{
+                .gallery{
+                    .slider{
+                        .mainImage{
+                            position: relative;
+                            .arrows{
+                                position: absolute;
+                                top: 0;
+                                bottom: 0;
+                                padding: 0 8px;
+                                height: 100%;
+                                background: rgba(0,0,0,.2);
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                font-size: 2rem;
+                                color: rgba(255,255,255, .6);
+                                cursor: pointer;
+                                &.leftArrow{
+                                    left: 0;
+                                }
+                                &.rightArrow{
+                                    right: 0;
+                                }
+                            }
+                            .imageOne{
+                                height: 400px;
+                                width: 100%;
+                                background: url('https://www.newcartestdrive.com/wp-content/uploads/2008/02/08-rdx-hero.jpg') center center no-repeat;
+                                background-size: cover;
+                            }
+                        }
+                    }
+                    .thumbnails{
+                        display: grid;
+                        grid-template-columns: repeat(6, 1fr);
+                        .thumbImage{
+                            height: 100px;
+                            width: 100px;
+                            background: url('https://img2.carmax.com/img/vehicles/18701783/1/385.jpg') center center no-repeat;
+                            background-size: cover;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
