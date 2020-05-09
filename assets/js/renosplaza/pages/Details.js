@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Gallery from './components/Gallery.js';
 
 export default class Details extends Component {
 	constructor() {
@@ -36,35 +37,11 @@ export default class Details extends Component {
 						{/* ===============================CONTENTAREA================================== */}
 						<section className={'contentArea'}>
 							<div className={'mediaColumn'}>
-								<div className={'gallery'}>
-									<div className={'slider'}>
-										<div className={'mainImage'}>
-											<div className={'arrows leftArrow'}>
-												<i className="fas fa-chevron-left"></i>
-											</div>
-											<div className={'arrows rightArrow'}>
-												<i className="fas fa-chevron-right"></i>
-											</div>
-											<div className={'imageOne'}></div>
-										</div>
-									</div>
-									<div className={'thumbnails'}>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-										<div className={'thumbImage'}></div>
-									</div>
-								</div>
+								<Gallery />
 							</div>
 							<div className={'detailsColumn'}>
 								<div className={'date'}>Posted: Apr 26th</div>
-								<h3>Black 2008 Acura Rdx</h3>
+								<h3 className="title">Black 2008 Acura Rdx</h3>
 								<h4 className={'price'}>$8,900</h4>
 								<div className={'moreDetails'}>
 									<div className={'info'}>
@@ -93,20 +70,26 @@ export default class Details extends Component {
 									</div>
 								</div>
 								<div className={'description'}>
+									<label>Description</label>
 									<p>
 										Low mileage and in excellent condition! This "Nighthawk
 										Black Pearl" 2007 Acura RDX SH-AWD has the Technology
 										Package! All-Wheel-Drive and very safe! It comes with the
 										Automatic Transmission, Turbocharged 2.3-Liter DOHC i-VTEC
 										Engine, Alloy Wheels, Backup Camera, Climate Control, Heated
+									</p>
+									<p>
 										Leather Seats, GPS Navigation System, Tow Hitch, Power
 										Equipment Group, Cruise Control, Power Sunroof, Acura/ELS
 										Surround Premium AM/FM/XM Sound System, Keyless Entry,
 										Privacy Glass & more! The odometer is 23k miles below market
-										average! We serviced & detailed this one, too: new front
-										door speakers, new wipers & more! You won't find many at
-										this price that are this nice! Don't hesitate...this won't
-										last long!
+									</p>
+									<p>
+										ass & more! The odometer is 23k miles below market average!
+										We serviced & detailed this one, too: new front door
+										speakers, new wipers & more! You won't find many at this
+										price that are this nice! Don't hesitate...this won't last
+										long!
 									</p>
 								</div>
 							</div>

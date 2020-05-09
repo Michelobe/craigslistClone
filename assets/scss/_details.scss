@@ -1,5 +1,5 @@
 .detailsPage{
-    background: #f1f1f1;
+    background: #f5f5f5;
     padding: 20px 0;
     .whiteBox{
         background: white;
@@ -46,11 +46,11 @@
                                 bottom: 0;
                                 padding: 0 8px;
                                 height: 100%;
-                                background: rgba(0,0,0,.2);
+                                background: rgba(0,0,0,.3);
                                 display: flex;
                                 align-items: center;
                                 justify-content: center;
-                                font-size: 2rem;
+                                font-size: 1.8rem;
                                 color: rgba(255,255,255, .6);
                                 cursor: pointer;
                                 &.leftArrow{
@@ -63,20 +63,70 @@
                             .imageOne{
                                 height: 400px;
                                 width: 100%;
-                                background: url('https://www.newcartestdrive.com/wp-content/uploads/2008/02/08-rdx-hero.jpg') center center no-repeat;
                                 background-size: cover;
                             }
                         }
                     }
                     .thumbnails{
+                        padding: 5px 0;
                         display: grid;
                         grid-template-columns: repeat(6, 1fr);
+                        justify-content: space-around;
+                        grid-gap: 8px;
                         .thumbImage{
                             height: 100px;
                             width: 100px;
-                            background: url('https://img2.carmax.com/img/vehicles/18701783/1/385.jpg') center center no-repeat;
                             background-size: cover;
+                            cursor: pointer;
                         }
+                    }
+                }
+            }
+            .detailsColumn{
+                padding-right: 20px;
+                .date{
+                    font-size: .9rem;
+                    color: rgb(36, 36, 36);
+                    margin: 0 0 10px 0;
+                }
+                .title{
+                    font-size: 2rem;
+                    font-weight: 500;
+                    margin: 0 0 10px 0;
+                }
+                .price{
+                    color: green;
+                    font-size: 1.7rem;
+                    font-weight: 500;
+                    margin: 0 0 20px 0;
+                }
+                label{
+                    font-weight: 700;
+                    font-size: .8rem;
+                    text-transform: uppercase;
+                    margin: 0 0 8px 0;
+                    display: block;
+                }
+                .moreDetails{
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    margin: 0 0 15px 0;
+                    border-bottom: 1px solid #80808041;
+                    .info{
+                        h5{
+                            font-size: .9rem;
+                            font-weight: 400;
+                            margin: 0 0 15px 0;
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+                .description{
+                    p{
+                        font-size: .9rem;
+                        line-height: 1.5;
+                        color: rgb(36, 36, 36);
+                        margin: 0 0 1rem 0;
                     }
                 }
             }
