@@ -77,7 +77,8 @@ gulp.task(
 				target: 'http://localhost:5000/', // can be [virtual host, sub-directory, localhost with port]
 				ws: true // enables websockets
 			},
-			serveStatic: ['.', './public']
+			serveStatic: ['.', './public'],
+			open: false //change this to true if you want the broser to open automatically
 		});
 	})
 );

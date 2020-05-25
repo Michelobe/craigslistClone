@@ -1,59 +1,80 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Home extends Component {
 	constructor() {
 		super();
-		this.state = {};
+		this.state = {
+			categoriesData: ''
+		};
 	}
+
+	componentWillMount() {
+		const self = this;
+		axios
+			.get('/api/categories')
+			.then(function(response) {
+				self.setState(
+					{
+						categoriesData: response.data
+					},
+					() => {
+						console.log(self.state);
+					}
+				);
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+	}
+
+	componentDidMount() {
+		const { match, history } = this.props;
+		if (match.params.city == undefined) {
+			history.push('/pdx');
+		}
+	}
+
 	clickedBtn = () => {};
 
 	loopCategories = () => {
-		let testArray = [1, 2, 3, 4, 5, 6, 7];
-		return testArray.map(item => {
-			return (
-				<div key={item} className={'categories'}>
-					<div className={'title'}>Community</div>
-					<div className={'groupLinks'}>
-						<a href="#" className={'link'}>
-							Community
-						</a>
-						<a href="#" className={'link'}>
-							General
-						</a>
-						<a href="#" className={'link'}>
-							Activities
-						</a>
-						<a href="#" className={'link'}>
-							Groups
-						</a>
-						<a href="#" className={'link'}>
-							Artists
-						</a>
-						<a href="#" className={'link'}>
-							Local News
-						</a>
-						<a href="#" className={'link'}>
-							Child Care
-						</a>
-						<a href="#" className={'link'}>
-							Lost+Found
-						</a>
-						<a href="#" className={'link'}>
-							Classes
-						</a>
-						<a href="#" className={'link'}>
-							Musicians
-						</a>
-						<a href="#" className={'link'}>
-							Events
-						</a>
-						<a href="#" className={'link'}>
-							Pets
-						</a>
+		// loops through each main category on home page ===================================
+		if (this.state.categoriesData != '') {
+			return this.state.categoriesData.map((category, i) => {
+				//loops through each listing underneath all main categories ==========
+
+				const loopListings = () => {
+					return category.listings.map((listing, i) => {
+						return (
+							<a
+								href={`${category.title}/${category.listings.slug}`}
+								className={'link'}
+								key={i}
+							>
+								{listing.name}
+							</a>
+						);
+					});
+				};
+
+				return (
+					<div className={'categories'} key={i}>
+						<div className={'title'}>{category.title}</div>
+						<div
+							className={`groupLinks ${
+								category.title == 'jobs' || category.title == 'housing'
+									? 'singleCol'
+									: ''
+							}`}
+						>
+							{loopListings()}
+						</div>
 					</div>
-				</div>
-			);
-		});
+				);
+			});
+		} else {
+			return 'LOADING';
+		}
 	};
 
 	loopTags = () => {

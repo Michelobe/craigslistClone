@@ -15,7 +15,7 @@
     .links{
         background: rgba(1, 31, 38, .7);
         display: grid;
-        grid-template-columns: repeat(7, 1fr);
+        grid-template-columns: repeat(6, 1fr);
         grid-gap: 20px;
         padding: 20px;
         margin-bottom: 60px;
@@ -23,14 +23,14 @@
             display: flex;
             flex-flow: column;
             border-right: 1px solid (rgba(255,255,255,.1));
-            &:last-child{
+            &:nth-child(4){
                 border: none
             }
             .title{
                 color: white;
                 font-size: .9rem;
                 text-transform: uppercase;
-                margin: 0 0 .8rem 0;
+                margin: 0 0 .9rem 0;
                 font-weight: 500;
                 letter-spacing: 1.5px;
             }
@@ -39,12 +39,15 @@
                 grid-template-columns: repeat(2, 1fr);
                 font-size: .8rem;
                 font-weight: 300;
+                &.singleCol{
+                    grid-template-columns: repeat(1, 1fr);
+                }
                 .link{
                     text-decoration: none;
                     text-transform: lowercase;
                     color: white;
                     margin: 0 0 .3rem 0;
-                    letter-spacing: 1px;
+                    letter-spacing: 2px;
                     &:hover{
                         color: blue;
                     }
