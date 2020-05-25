@@ -41,9 +41,8 @@ export default class Home extends Component {
 		// loops through each main category on home page ===================================
 		if (this.state.categoriesData != '') {
 			return this.state.categoriesData.map((category, i) => {
-				//loops through each listing underneath all main categories ==========
-
 				const loopListings = () => {
+					//loops through each listing underneath all main categories ==========
 					return category.listings.map((listing, i) => {
 						return (
 							<a

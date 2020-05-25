@@ -15,18 +15,7 @@ const app = express();
 
 app.use('/', serveStatic(path.join(__dirname, '/public')));
 
-//API CITIES ===========================================
-app.get('/api/cities', function(req, res){
-    res.json(categoriesData);
-});
-
-//API CATEGORIES =======================================
-app.get('/api/:city/:categories', function(req, res){
-    res.json(categoriesData);
-});
-
-//API ITEM =======================================
-app.get('/api/:city/:categories/:listing/:item', function(req, res){
+app.get('/api/categories', function(req, res){
     res.json(categoriesData);
 });
 
