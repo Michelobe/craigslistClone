@@ -27,7 +27,7 @@ export default class Header extends Component {
 						citiesData: response.data
 					},
 					() => {
-						console.log(self.state);
+						console.log(response.data);
 					}
 				);
 			})
@@ -37,15 +37,17 @@ export default class Header extends Component {
 	}
 
 	selectCity = city => {
+		console.log(city);
 		this.setState({
 			selectedCity: city
 		});
 	};
 
 	loopCities = () => {
+		const self = this;
 		return this.state.citiesData.map((item, i) => {
 			return (
-				<li key={i} onclick={this.selectCity.bind(null, item.title)}>
+				<li key={i} onClick={self.selectCity.bind(null, item.title)}>
 					{item.title}
 				</li>
 			);
@@ -59,7 +61,7 @@ export default class Header extends Component {
 					<div className={'leftMenu'}>
 						<div className={'logo'}>RenosPlaza</div>
 						<div className={'cityDropdown'} onClick={this.clickedCityDropdown}>
-							{this.state.selectCity}
+							{this.state.selectedCity}
 							<i className={'fas fa-chevron-down'}></i>
 							<div
 								className={`scrollArea ${
