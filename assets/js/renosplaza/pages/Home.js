@@ -9,10 +9,17 @@ export default class Home extends Component {
 		};
 	}
 
-	componentWillMount() {
+	componentWillMount() {}
+
+	componentDidMount() {
+		const { match, history } = this.props;
+		if (match.params.city == undefined) {
+			history.push('/pdx');
+		}
+
 		const self = this;
 		axios
-			.get('/api/categories')
+			.get(`/api/${match.params.city}`)
 			.then(function(response) {
 				self.setState(
 					{
@@ -26,13 +33,6 @@ export default class Home extends Component {
 			.catch(function(error) {
 				console.log(error);
 			});
-	}
-
-	componentDidMount() {
-		const { match, history } = this.props;
-		if (match.params.city == undefined) {
-			history.push('/pdx');
-		}
 	}
 
 	clickedBtn = () => {};

@@ -1,20 +1,73 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Header extends Component {
 	constructor() {
 		super();
-		this.state = {};
+		this.state = {
+			cityDropdown: false,
+			selectedCity: 'Portland',
+			citiesData: []
+		};
 	}
-	clickedBtn = () => {};
-	async test() {}
+
+	clickedCityDropdown = () => {
+		this.setState({
+			cityDropdown: !this.state.cityDropdown
+		});
+	};
+
+	componentWillMount() {
+		const self = this;
+		axios
+			.get(`/api/cities`)
+			.then(function(response) {
+				self.setState(
+					{
+						citiesData: response.data
+					},
+					() => {
+						console.log(self.state);
+					}
+				);
+			})
+			.catch(function(error) {
+				console.log(error);
+			});
+	}
+
+	selectCity = city => {
+		this.setState({
+			selectedCity: city
+		});
+	};
+
+	loopCities = () => {
+		return this.state.citiesData.map((item, i) => {
+			return (
+				<li key={i} onclick={this.selectCity.bind(null, item.title)}>
+					{item.title}
+				</li>
+			);
+		});
+	};
+
 	render() {
 		return (
 			<div className="container">
 				<header>
 					<div className={'leftMenu'}>
 						<div className={'logo'}>RenosPlaza</div>
-						<div className={'city'}>
-							Portland<i className={'fas fa-chevron-down'}></i>
+						<div className={'cityDropdown'} onClick={this.clickedCityDropdown}>
+							{this.state.selectCity}
+							<i className={'fas fa-chevron-down'}></i>
+							<div
+								className={`scrollArea ${
+									this.state.cityDropdown ? 'active' : ''
+								}`}
+							>
+								<ul>{this.loopCities()}</ul>
+							</div>
 						</div>
 					</div>
 					<div className={'rightMenu'}>
