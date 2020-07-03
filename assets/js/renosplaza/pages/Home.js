@@ -12,7 +12,7 @@ export default class Home extends Component {
 	componentWillMount() {}
 
 	componentDidMount() {
-		const { match, history } = this.props;
+		const { match, location, history } = this.props;
 		if (match.params.city == undefined) {
 			history.push('/pdx');
 		}
@@ -21,14 +21,9 @@ export default class Home extends Component {
 		axios
 			.get(`/api/${match.params.city}`)
 			.then(function(response) {
-				self.setState(
-					{
-						categoriesData: response.data
-					},
-					() => {
-						console.log(self.state);
-					}
-				);
+				self.setState({
+					categoriesData: response.data
+				});
 			})
 			.catch(function(error) {
 				console.log(error);
@@ -46,7 +41,7 @@ export default class Home extends Component {
 					return category.listings.map((listing, i) => {
 						return (
 							<a
-								href={`${category.title}/${category.listings.slug}`}
+								href={`${category.title}/${listing.slug}`}
 								className={'link'}
 								key={i}
 							>
