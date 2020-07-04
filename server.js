@@ -29,10 +29,14 @@ app.get('/api/cities', function(req, res){
 //shows all categories for a city
 app.get('/api/:city', function(req, res){
     res.json(categoriesData);
+
 });
 //shows all the items for that category
 app.get('/api/:city/:categories', function(req, res){
-    res.json(categoriesData);
+
+    
+
+    res.json(itemData);
 });
 
 //show all the items for that listing

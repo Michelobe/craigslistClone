@@ -12,7 +12,7 @@ export default class Home extends Component {
 	componentWillMount() {}
 
 	componentDidMount() {
-		const { match, location, history } = this.props;
+		const { match, history } = this.props;
 		if (match.params.city == undefined) {
 			history.push('/pdx');
 		}
@@ -33,6 +33,7 @@ export default class Home extends Component {
 	clickedBtn = () => {};
 
 	loopCategories = () => {
+		const { match, history } = this.props;
 		// loops through each main category on home page ===================================
 		if (this.state.categoriesData != '') {
 			return this.state.categoriesData.map((category, i) => {
@@ -41,7 +42,7 @@ export default class Home extends Component {
 					return category.listings.map((listing, i) => {
 						return (
 							<a
-								href={`${category.title}/${listing.slug}`}
+								href={`${match.params.city}/${category.title}/${listing.slug}`}
 								className={'link'}
 								key={i}
 							>
@@ -53,7 +54,12 @@ export default class Home extends Component {
 
 				return (
 					<div className={'categories'} key={i}>
-						<div className={'title'}>{category.title}</div>
+						<a
+							href={`/${match.params.city}/${category.title}`}
+							className={'title'}
+						>
+							{category.title}
+						</a>
 						<div
 							className={`groupLinks ${
 								category.title == 'jobs' || category.title == 'housing'
