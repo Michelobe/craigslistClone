@@ -2,7 +2,7 @@ module.exports = [
     {
         title: '2016 Wrangler',
         listing: 'cars-and-trucks',
-        city: 'Portland',
+        city: 'portland',
         category: 'for-sale',
         price: 46000,
         extraDetails: {
@@ -28,7 +28,7 @@ module.exports = [
     {
         title: '2011 BMW 335xi',
         listing: 'cars-and-trucks',
-        city: 'Portland',
+        city: 'portland',
         category: 'for-sale',
         price: 15000,
         extraDetails: {
@@ -54,7 +54,7 @@ module.exports = [
     {
         title: '2001 Honda Civic HX',
         listing: 'cars-and-trucks',
-        city: 'Portland',
+        city: 'portland',
         category: 'for-sale',
         price: 2000,
         extraDetails: {
@@ -80,7 +80,7 @@ module.exports = [
     {
         title: '2008 Acura RDX',
         listing: 'cars-and-trucks',
-        city: 'Portland',
+        city: 'portland',
         category: 'for-sale',
         price: 9000,
         extraDetails: {
@@ -106,7 +106,7 @@ module.exports = [
     {
         title: '2008 Lexus is250',
         listing: 'cars-and-trucks',
-        city: 'Portland',
+        city: 'portland',
         category: 'for-sale',
         price: 15000,
         extraDetails: {
@@ -132,7 +132,7 @@ module.exports = [
     {
         title: '2012 Camry XLE Hybrid',
         listing: 'cars-and-trucks',
-        city: 'Portland',
+        city: 'portland',
         category: 'for-sale',
         price: 18000,
         extraDetails: {

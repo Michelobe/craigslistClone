@@ -9,19 +9,13 @@ export default class Category extends Component {
 
 	componentWillMount() {
 		const { match, history } = this.props;
-		console.log(match.params.category);
 		const self = this;
 		axios
 			.get(`/api/${match.params.city}/${match.params.category}`)
 			.then(function(response) {
-				self.setState(
-					{
-						itemData: response.data
-					},
-					() => {
-						console.log(self.state);
-					}
-				);
+				self.setState({
+					itemData: response.data
+				});
 			})
 			.catch(function(error) {
 				console.log(error);
@@ -29,21 +23,27 @@ export default class Category extends Component {
 	}
 
 	loopItems = () => {
-		let testArray = [1, 2, 3, 4, 5, 6, 7];
-		return testArray.map((item, i) => {
-			return (
-				<div key={item} className={'item'}>
-					<div className={'image'}>
-						<div className={'price'}>$8,900</div>
+		if (this.state.itemData != undefined) {
+			return this.state.itemData.map((item, i) => {
+				return (
+					<div key={item} className={'item'}>
+						<div
+							className={'image'}
+							style={{
+								backgroundImage: `url('${item.images[0]}')`
+							}}
+						>
+							<div className={'price'}>${item.price}</div>
+						</div>
+						<div className={'details'}>
+							<h5>{item.title}</h5>
+							<i className="fas fa-star"></i>
+							<h6>{item.city}</h6>
+						</div>
 					</div>
-					<div className={'details'}>
-						<h5>2008 Acura RDX turbo</h5>
-						<i className="fas fa-star"></i>
-						<h6>Portland, OR</h6>
-					</div>
-				</div>
-			);
-		});
+				);
+			});
+		}
 	};
 
 	showMakeModelDropdown = () => {

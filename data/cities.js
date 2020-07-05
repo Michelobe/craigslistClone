@@ -1,22 +1,22 @@
 module.exports = [
     {
         title: 'Portland',
-        slug: 'pdx'
+        slug: 'portland'
     },
     {
         title: 'Santa Ana',
-        slug: 'sna'
+        slug: 'santa-ana'
     },
     {
         title: 'Miami',
-        slug: 'mia'
+        slug: 'miami'
     },
     {
         title: 'Detroit',
-        slug: 'det'
+        slug: 'detroit'
     },
     {
         title: 'Phoenix',
-        slug: 'phx'
+        slug: 'phoenix'
     },
 ]

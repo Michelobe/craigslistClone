@@ -33,10 +33,11 @@ app.get('/api/:city', function(req, res){
 });
 //shows all the items for that category
 app.get('/api/:city/:categories', function(req, res){
+    const newData = itemData.filter((item) => {
+        return item.city == req.params.city && item.categories == req.params.category;
+    });
 
-    
-
-    res.json(itemData);
+    res.json(newData);
 });
 
 //show all the items for that listing

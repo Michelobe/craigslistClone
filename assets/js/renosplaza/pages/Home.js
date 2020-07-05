@@ -14,7 +14,7 @@ export default class Home extends Component {
 	componentDidMount() {
 		const { match, history } = this.props;
 		if (match.params.city == undefined) {
-			history.push('/pdx');
+			history.push('/portland');
 		}
 
 		const self = this;
