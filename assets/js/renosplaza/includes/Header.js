@@ -51,7 +51,7 @@ export default class Header extends Component {
 				let city = this.state.citiesData.filter(item => {
 					return item.title == this.state.selectedCity;
 				});
-				const { match, history } = this.props;
+				const { match, location, history } = this.props;
 				history.push(`${city[0].slug}`);
 			}
 		);

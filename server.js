@@ -31,22 +31,33 @@ app.get('/api/:city', function(req, res){
     res.json(categoriesData);
 
 });
-//shows all the items for that category
-app.get('/api/:city/:categories', function(req, res){
-    const newData = itemData.filter((item) => {
-        return item.city == req.params.city && item.categories == req.params.category;
-    });
 
+//shows all the items for that category
+app.get('/api/:city/:category', function(req, res){
+    let newData;
+    // newData = itemData.filter((item) => {
+    //     return item.city == req.params.city && item.category == req.params.category;
+    // });
+    
+    if(req.query.minPrice != undefined){
+        newData = itemData.filter((item) => {
+            return item.city == req.params.city && item.category == req.params.category && item.price >= req.query.minPrice && item.price <= req.query.maxPrice;
+        });
+    }else {
+        newData = itemData.filter((item) => {
+            return item.city == req.params.city && item.category == req.params.category;
+        });
+    }
     res.json(newData);
 });
 
 //show all the items for that listing
-app.get('/api/:city/:categories/:listing', function(req, res){
+app.get('/api/:city/:category/:listing', function(req, res){
     res.json(itemData);
 });
 
 //show the item that was selected
-app.get('/api/:city/:categories/:listing/:item', function(req, res){
+app.get('/api/:city/:category/:listing/:item', function(req, res){
     res.json(itemData);
 });
 
